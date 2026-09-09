@@ -1,43 +1,13 @@
-"use client"git add .;
+"use client";
 
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import Frame from "@/components/Frame";
-import { PRODUCTS } from "@/data/products";
-
-type CartLine = { slug: string; qty: number };
-
-// Mock starting cart — in a real build this would come from cart context / localStorage / backend.
-const INITIAL_CART: CartLine[] = [
-  { slug: "the-linen-wrap", qty: 1 },
-  { slug: "field-notebook", qty: 2 },
-];
+import { useCart } from "@/components/CartContext";
 
 export default function CartPage() {
-  const [cart, setCart] = useState<CartLine[]>(INITIAL_CART);
+  const { lines, subtotal, updateQty, remove } = useCart();
   const [promo, setPromo] = useState("");
-
-  const lines = useMemo(
-    () =>
-      cart
-        .map((line) => {
-          const product = PRODUCTS.find((p) => p.slug === line.slug);
-          if (!product) return null;
-          return { ...line, product };
-        })
-        .filter(Boolean) as { slug: string; qty: number; product: (typeof PRODUCTS)[number] }[],
-    [cart]
-  );
-
-  const subtotal = lines.reduce((sum, line) => sum + line.product.price * line.qty, 0);
-
-  function updateQty(slug: string, qty: number) {
-    setCart((c) => c.map((line) => (line.slug === slug ? { ...line, qty: Math.max(1, qty) } : line)));
-  }
-
-  function remove(slug: string) {
-    setCart((c) => c.filter((line) => line.slug !== slug));
-  }
 
   return (
     <main>
