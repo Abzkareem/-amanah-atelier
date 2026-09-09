@@ -4,10 +4,10 @@ const COLUMNS = [
   {
     title: "SHOP",
     links: [
-      { label: "Everyday", href: "/shop?category=everyday" },
-      { label: "Home", href: "/shop?category=home" },
-      { label: "Modest Living", href: "/shop?category=modest" },
-      { label: "Gifts", href: "/shop?category=gifts" },
+      { label: "Everyday", href: "/collections/everyday" },
+      { label: "Home", href: "/collections/home" },
+      { label: "Modest Living", href: "/collections/modest-living" },
+      { label: "Gifts", href: "/collections/gifts" },
     ],
   },
   {

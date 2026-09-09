@@ -6,7 +6,7 @@ import { useCart } from "./CartContext";
 
 const NAV_LINKS = [
   { label: "Shop", href: "/shop" },
-  { label: "Collections", href: "/#collections" },
+  { label: "Collections", href: "/collections" },
   { label: "Journal", href: "/#journal" },
   { label: "About", href: "/#about" },
 ];

@@ -21,12 +21,27 @@ const workSans = Work_Sans({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://amanahatelier.com"),
   title: {
     default: "Amanah Atelier — Made with Intention",
     template: "%s — Amanah Atelier",
   },
   description:
     "Amanah Atelier creates considered pieces for everyday living — rooted in faith, modesty, and craftsmanship.",
+  openGraph: {
+    title: "Amanah Atelier — Made with Intention",
+    description:
+      "Considered pieces for everyday living — rooted in faith, modesty, and craftsmanship.",
+    url: "https://amanahatelier.com",
+    siteName: "Amanah Atelier",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Amanah Atelier — Made with Intention",
+    description:
+      "Considered pieces for everyday living — rooted in faith, modesty, and craftsmanship.",
+  },
 };
 
 export default function RootLayout({

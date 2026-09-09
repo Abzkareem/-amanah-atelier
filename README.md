@@ -30,6 +30,7 @@ Next.js + Tailwind build of the Amanah Atelier site.
 
 - Home (`/`) — hero, brand intro, collections, editorial spread, featured products, philosophy, journal preview, newsletter
 - Shop (`/shop`) — filter by category, sort, product grid
+- Collections index (`/collections`) and individual collection pages (`/collections/[slug]`) — editorial intro + filtered product grid per collection
 - Product detail (`/product/[slug]`) — gallery, variant/quantity selectors, add to cart, accordion, related products
 - About (`/about`)
 - Journal index (`/journal`) and article pages (`/journal/[slug]`) — content lives in `data/journal.ts`
@@ -45,3 +46,4 @@ Next.js + Tailwind build of the Amanah Atelier site.
 - No real photography — every image is the `.frame` placeholder component; swap `src` into `<Frame />` as real photography becomes available.
 - No real backend for products — `data/products.ts` and `data/journal.ts` are the seams where a real CMS/Shopify/Medusa integration would plug in.
 - No real checkout/payment yet — `/checkout` is a placeholder page.
+- SEO basics are in place: `app/sitemap.ts`, `app/robots.ts`, and Open Graph/Twitter card metadata in `app/layout.tsx` — **update the `BASE_URL`/`metadataBase` placeholder (`https://amanahatelier.com`) once you have your real domain**, and add a real `opengraph-image` once photography exists (Next.js picks up an `opengraph-image.jpg` dropped into `app/` automatically).

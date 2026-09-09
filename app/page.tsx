@@ -53,15 +53,15 @@ export default function HomePage() {
       <section id="collections" className="py-20">
         <div className="flex items-end justify-between px-5 md:px-16 mb-11 gap-6 flex-wrap">
           <h2 className="font-serif text-[clamp(1.8rem,3vw,2.5rem)]">Where to begin</h2>
-          <Link href="/shop" className="text-sm border-b border-ink pb-0.5">
+          <Link href="/collections" className="text-sm border-b border-ink pb-0.5">
             View all collections
           </Link>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-line">
           {[
-            { name: "Everyday", tag: "Pieces for the ordinary hours", href: "/shop?category=everyday" },
-            { name: "Home", tag: "Objects that furnish a life", href: "/shop?category=home" },
-            { name: "Modest Living", tag: "Considered dress, quietly made", href: "/shop?category=modest" },
+            { name: "Everyday", tag: "Pieces for the ordinary hours", href: "/collections/everyday" },
+            { name: "Home", tag: "Objects that furnish a life", href: "/collections/home" },
+            { name: "Modest Living", tag: "Considered dress, quietly made", href: "/collections/modest-living" },
           ].map((c) => (
             <Link key={c.name} href={c.href} className="relative aspect-[3/4] overflow-hidden group block">
               <Frame caption={c.name} className="absolute inset-0 transition-transform duration-500 group-hover:scale-105" />
